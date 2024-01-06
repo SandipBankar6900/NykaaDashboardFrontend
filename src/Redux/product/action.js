@@ -4,22 +4,7 @@ import axios from "axios"
 
 
 
-// export const postProd=(newProd)=>(dispatch)=>{
-//     const token=localStorage.getItem("token");
-//     dispatch({type:PROD_POST_REQ})
-//     let prod=axios.post("https://nykaa-irdl.onrender.com/api/products",{
-//         headers: {
-//           authorization: `Bearer ${token}`,
-//         },
-//         params: newProd,
-//       }).then((res)=>{
-//         console.log(res.data)
-//         dispatch({type:PROD_POST_SUCC,payload:res.data})
-//     }).catch(()=>{
-//         dispatch({type:PROD_POST_FAIL})
-//     })
-//     return prod;
-// }
+
 
 export const postProd = (newProd) => (dispatch) => {
   const token = localStorage.getItem("token");
@@ -56,7 +41,7 @@ export const getProd=(paramsobj)=>(dispatch)=>{
         },
         params: paramsobj,
       }).then((res)=>{
-// console.log(res.data)
+
         dispatch({type:GET_PRODUCT,payload:res.data})
     }).catch(()=>{
         dispatch({type:PROD_POST_FAIL})

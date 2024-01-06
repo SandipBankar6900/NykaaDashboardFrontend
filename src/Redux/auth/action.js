@@ -7,7 +7,7 @@ export const getLog = (userdata) => (dispatch) => {
     let login = axios
       .post("https://naykaabackenddd.onrender.com/user/login", userdata)
       .then((res) => {
-        // console.log(res.data)
+      
         const {token}=res.data;
         localStorage.setItem('token',token)
         // console.log(token)
@@ -20,9 +20,9 @@ export const getLog = (userdata) => (dispatch) => {
     return login;
   };
   export const logout = () => (dispatch) => {
-    // Remove the token from localStorage
+    
     localStorage.removeItem('token');
   
-    // Dispatch the LOGOUT action to update the state
+    
     dispatch({ type: "LOGOUT" });
   };
